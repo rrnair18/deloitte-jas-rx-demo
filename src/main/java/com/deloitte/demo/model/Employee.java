@@ -1,18 +1,28 @@
 package com.deloitte.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity 
 public class Employee extends Department {
 
+	@Id
 	private int id;
 	private String firstName;
 	private double salary;
-	Department department;
+
+//	@ManyToOne
+//	@JoinColumn(name = "department_id")
+//	Department department;
 
 	public Employee(int id, String firstName, double salary, Department department) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.salary = salary;
-		this.department = department;
+//		this.department = department;
 	}
 
 	public int getId() {
@@ -39,13 +49,13 @@ public class Employee extends Department {
 		this.salary = salary;
 	}
 
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
+//	public Department getDepartment() {
+//		return department;
+//	}
+//
+//	public void setDepartment(Department department) {
+//		this.department = department;
+//	}
 
 	@Override
 	public String toString() {

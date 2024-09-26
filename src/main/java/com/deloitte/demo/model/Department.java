@@ -1,6 +1,12 @@
 package com.deloitte.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Department {
+
+	@Id
 	int id;
 	String name;
 	String location;
