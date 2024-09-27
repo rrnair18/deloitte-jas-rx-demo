@@ -16,6 +16,9 @@ public class Employee extends Department {
 //	@ManyToOne
 //	@JoinColumn(name = "department_id")
 //	Department department;
+	
+    public Employee() {
+    }
 
 	public Employee(int id, String firstName, double salary, Department department) {
 		super();

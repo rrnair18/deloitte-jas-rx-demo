@@ -76,9 +76,12 @@ public class EmployeeRepository {
 
 	public List<Employee> getAllEmployees() {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		List<Employee> employees = entityManager.createQuery("SELECT e FROM Employee e", Employee.class)
-				.getResultList();
-		entityManager.close();
+//		List<Employee> employees = entityManager.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();
+//		entityManager.close();
+	    List<Employee> employees = entityManager.createNativeQuery("SELECT * FROM Employee", Employee.class).getResultList();
+	    entityManager.close();
+
+		System.out.println(employees.size());
 		return employees;
 	}
 
